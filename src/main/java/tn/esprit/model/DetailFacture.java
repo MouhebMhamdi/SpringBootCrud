@@ -1,5 +1,7 @@
 package tn.esprit.model;
 
+import lombok.*;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
@@ -15,7 +17,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
+
 public class DetailFacture implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,28 +39,6 @@ public class DetailFacture implements Serializable {
 	Facture facture;
 
 	
-	public long getIdDetailFacture() {
-		return idDetailFacture;
-	}
-	public void setIdDetailFacture(long idDetailFacture) {
-		this.idDetailFacture = idDetailFacture;
-	}
-	public Date getDateCreation() {
-		return DateCreation;
-	}
-	public void setDateCreation(Date dateCreation) {
-		DateCreation = dateCreation;
-	}
-	public Date getDateDernierModification() {
-		return DateDernierModification;
-	}
-	public void setDateDernierModification(Date dateDernierModification) {
-		DateDernierModification = dateDernierModification;
-	}
-	public CategorieProduit getCategorieProduit() {
-		return CategorieProduit;
-	}
-	public void setCategorieProduit(CategorieProduit categorieProduit) {
-		CategorieProduit = categorieProduit;
-	}
+
+
 }

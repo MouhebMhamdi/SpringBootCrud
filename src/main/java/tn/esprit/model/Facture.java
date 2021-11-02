@@ -1,9 +1,16 @@
 package tn.esprit.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
 public class Facture implements  Serializable{
 		@Id
@@ -22,51 +29,6 @@ public class Facture implements  Serializable{
 		@ManyToOne
 		Client client;
 
-		public Set<DetailFacture> getDetailFactures() {
-			return detailFactures;
-		}
 
-		public void setDetailFactures(Set<DetailFacture> detailFactures) {
-			this.detailFactures = detailFactures;
-		}
-
-		public Client getClient() {
-			return client;
-		}
-
-		public void setClient(Client client) {
-			this.client = client;
-		}
-
-		public long getIdFacture() {
-			return idFacture;
-		}
-		public void setIdFacture(long idFacture) {
-			this.idFacture = idFacture;
-		}
-		public float getMontantRemise() {
-			return montantRemise;
-		}
-		public void setMontantRemise(float montantRemise) {
-			this.montantRemise = montantRemise;
-		}
-		public float getIdmontantFacture() {
-			return idmontantFacture;
-		}
-		public void setIdmontantFacture(float idmontantFacture) {
-			this.idmontantFacture = idmontantFacture;
-		}
-		public Date getDateFacture() {
-			return DateFacture;
-		}
-		public void setDateFacture(Date dateFacture) {
-			DateFacture = dateFacture;
-		}
-		public boolean isActive() {
-			return active;
-		}
-		public void setActive(boolean active) {
-			this.active = active;
-		}
 	 
 }

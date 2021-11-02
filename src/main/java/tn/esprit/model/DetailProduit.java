@@ -1,5 +1,7 @@
 package tn.esprit.model;
 
+import lombok.*;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,6 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+
 @Entity
 public class DetailProduit implements Serializable {
 	@Id
@@ -28,35 +36,5 @@ public class DetailProduit implements Serializable {
 	@OneToOne(mappedBy="detailProduit")
 	private Produit produit;
 
-	public long getIdDetailProduit() {
-		return idDetailProduit;
-	}
 
-	public void setIdDetailProduit(long idDetailProduit) {
-		this.idDetailProduit = idDetailProduit;
-	}
-
-	public Date getDateCreation() {
-		return dateCreation;
-	}
-
-	public void setDateCreation(Date dateCreation) {
-		this.dateCreation = dateCreation;
-	}
-
-	public Date getDatDernieremodification() {
-		return datDernieremodification;
-	}
-
-	public void setDatDernieremodification(Date datDernieremodification) {
-		this.datDernieremodification = datDernieremodification;
-	}
-
-	public CategorieProduit getCategorieProduit() {
-		return categorieProduit;
-	}
-
-	public void setCategorieProduit(CategorieProduit categorieProduit) {
-		this.categorieProduit = categorieProduit;
-	} 
 }

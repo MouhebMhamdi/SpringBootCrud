@@ -1,8 +1,15 @@
 package tn.esprit.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity
 public class Produit implements Serializable {
@@ -34,63 +41,6 @@ public class Produit implements Serializable {
 	Stock stock;
 
 
-	public Rayon getRayon() {
-		return rayon;
-	}
 
-	public void setRayon(Rayon rayon) {
-		this.rayon = rayon;
-	}
-
-	public DetailFacture getDetailFacture() {
-		return detailFacture;
-	}
-
-	public void setDetailFacture(DetailFacture detailFacture) {
-		this.detailFacture = detailFacture;
-	}
-
-	public DetailProduit getDetailProduit() {
-		return detailProduit;
-	}
-
-	public void setDetailProduit(DetailProduit detailProduit) {
-		this.detailProduit = detailProduit;
-	}
-
-	public Stock getStock() {
-		return stock;
-	}
-
-	public void setStock(Stock stock) {
-		this.stock = stock;
-	}
-
-
-	
-	public long getIdProduit() {
-		return idProduit;
-	}
-	public void setIdProduit(long idProduit) {
-		this.idProduit = idProduit;
-	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getIdlibelle() {
-		return idlibelle;
-	}
-	public void setIdlibelle(String idlibelle) {
-		this.idlibelle = idlibelle;
-	}
-	public float getIdprixUnitaire() {
-		return idprixUnitaire;
-	}
-	public void setIdprixUnitaire(float idprixUnitaire) {
-		this.idprixUnitaire = idprixUnitaire;
-	}
 
 }

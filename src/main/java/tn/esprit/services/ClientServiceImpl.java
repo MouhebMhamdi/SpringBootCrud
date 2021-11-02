@@ -50,5 +50,21 @@ public class ClientServiceImpl implements ClientService {
         return clientRepositorie.findAll();
     }
 
+    @Override
+    public Boolean getClientByEmailAndPassword(String email, String Password) {
+        if(clientRepositorie.getClientByEmailAndPassword(email,Password)!=null) return true;
+        return false;
+    }
+
+    @Override
+    public Client getClientByEmail(String email) {
+        return clientRepositorie.getClientByEmail(email);
+    }
+
+    @Override
+    public Client doLogin(String email, String Password) {
+        return clientRepositorie.getClientByEmailAndPassword(email,Password);
+    }
+
 
 }
