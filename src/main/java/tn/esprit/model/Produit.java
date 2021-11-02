@@ -13,6 +13,21 @@ import java.util.Set;
 
 @Entity
 public class Produit implements Serializable {
+	@Override
+	public String toString() {
+		return "Produit{" +
+				"idProduit=" + idProduit +
+				", code='" + code + '\'' +
+				", idlibelle='" + idlibelle + '\'' +
+				", idprixUnitaire=" + idprixUnitaire +
+				", fournisseurProduit=" + fournisseurProduit +
+				", rayon=" + rayon +
+				", detailFacture=" + detailFacture +
+				", detailProduit=" + detailProduit +
+				", stock=" + stock +
+				'}';
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long  idProduit; 

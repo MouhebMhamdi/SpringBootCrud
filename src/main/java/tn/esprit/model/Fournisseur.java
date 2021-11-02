@@ -16,7 +16,15 @@ import javax.persistence.Id;
 
 @Entity
 public class Fournisseur implements Serializable {
-	
+	@Override
+	public String toString() {
+		return "Fournisseur{" +
+				"idFournisseur=" + idFournisseur +
+				", code='" + code + '\'' +
+				", libelle='" + libelle + '\'' +
+				'}';
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idFournisseur ;

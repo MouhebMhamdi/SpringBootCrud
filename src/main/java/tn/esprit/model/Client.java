@@ -1,10 +1,14 @@
 package tn.esprit.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
-import lombok.*;
 
 
 @Getter
@@ -43,9 +47,17 @@ public class Client implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private Set<Facture> factures;
 
-	
 
-
-	
-	
+	@Override
+	public String toString() {
+		return getClass().getSimpleName() + "(" +
+				"idClient = " + idClient + ", " +
+				"Nom = " + Nom + ", " +
+				"Prenom = " + Prenom + ", " +
+				"DateNaissance = " + DateNaissance + ", " +
+				"email = " + email + ", " +
+				"password = " + password + ", " +
+				"categorie = " + categorie + ", " +
+				"Proffesion = " + Proffesion + ")";
+	}
 }

@@ -24,6 +24,18 @@ import javax.persistence.TemporalType;
 @Entity
 
 public class DetailFacture implements Serializable {
+	@Override
+	public String toString() {
+		return "DetailFacture{" +
+				"idDetailFacture=" + idDetailFacture +
+				", DateCreation=" + DateCreation +
+				", DateDernierModification=" + DateDernierModification +
+				", CategorieProduit=" + CategorieProduit +
+				", produits=" + produits +
+				", facture=" + facture +
+				'}';
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idDetailFacture ;

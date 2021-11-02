@@ -13,6 +13,16 @@ import java.util.Set;
 
 @Entity
 public class Rayon implements Serializable{
+	@Override
+	public String toString() {
+		return "Rayon{" +
+				"idRayon=" + idRayon +
+				", produits=" + produits +
+				", code='" + code + '\'' +
+				", libelle='" + libelle + '\'' +
+				'}';
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	long idRayon ;

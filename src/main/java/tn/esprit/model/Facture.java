@@ -19,7 +19,21 @@ public class Facture implements  Serializable{
  		private long idFacture ;
 	 	private float montantRemise ;
 	 	private float idmontantFacture ;
-	 	@Temporal(value=TemporalType.TIMESTAMP)
+
+	@Override
+	public String toString() {
+		return "Facture{" +
+				"idFacture=" + idFacture +
+				", montantRemise=" + montantRemise +
+				", idmontantFacture=" + idmontantFacture +
+				", DateFacture=" + DateFacture +
+				", active=" + active +
+				", detailFactures=" + detailFactures +
+				", client=" + client +
+				'}';
+	}
+
+	@Temporal(value=TemporalType.TIMESTAMP)
 		private Date DateFacture  ;
 		private boolean active  ;
 

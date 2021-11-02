@@ -18,6 +18,18 @@ public class Stock implements Serializable {
 	private long idStock;
 	private int qte;
 	private int qtemin ;
+
+	@Override
+	public String toString() {
+		return "Stock{" +
+				"idStock=" + idStock +
+				", qte=" + qte +
+				", qtemin=" + qtemin +
+				", libellStock='" + libellStock + '\'' +
+				", produits=" + produits +
+				'}';
+	}
+
 	private String libellStock ;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="stock")
 	private Set<Produit> produits;
