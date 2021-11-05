@@ -66,5 +66,24 @@ public class ClientServiceImpl implements ClientService {
         return clientRepositorie.getClientByEmailAndPassword(email,Password);
     }
 
+    @Override
+    public void updateClient(Client client, long id) {
+        Client cl=clientRepositorie.findById(id).get();
+
+        if(client.getDateNaissance()!=null) cl.setDateNaissance(client.getDateNaissance());
+
+        if(client.getFactures()!=null)cl.setFactures(client.getFactures());
+
+        if(client.getProffesion()!=null)cl.setProffesion(client.getProffesion());
+
+        if(client.getPassword()!=null)cl.setPassword(client.getPassword());
+
+        if(client.getEmail()!=null)cl.setEmail(client.getEmail());
+
+        if(client.getCategorie()!=null)cl.setCategorie(client.getCategorie());
+
+        clientRepositorie.save(cl);
+    }
+
 
 }

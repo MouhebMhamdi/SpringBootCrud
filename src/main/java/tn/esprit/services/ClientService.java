@@ -14,4 +14,6 @@ public interface ClientService  {
     Boolean getClientByEmailAndPassword(String email,String Password);
     Client getClientByEmail(String email);
     Client doLogin(String email,String Password);
+
+    void  updateClient(Client client, long id );
 }
