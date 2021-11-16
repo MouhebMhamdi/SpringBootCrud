@@ -1,5 +1,6 @@
 package tn.esprit.Controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.model.Rayon;
@@ -9,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Rayon")
+@Api(tags = "Rayon Manager")
 public class RayonController {
 
 	@Autowired

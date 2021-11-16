@@ -1,15 +1,23 @@
 package tn.esprit.services;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.Repositories.FourniseurRepository;
+import tn.esprit.Repositories.ProduitRepository;
 import tn.esprit.model.Fournisseur;
+import tn.esprit.model.Produit;
 
 @Service
 public class FournisseurServiceImpl implements FournisseurService{
     @Autowired
     FourniseurRepository fourniseurRepository;
+
+    @Autowired
+    ProduitRepository produitRepository;
     @Override
     public void addFournisseur(Fournisseur fournisseur) {
         if(!fourniseurRepository.findById(fournisseur.getIdFournisseur()).isPresent()){
@@ -47,6 +55,17 @@ public class FournisseurServiceImpl implements FournisseurService{
     @Override
     public void DeleteAllFournisseur() {
     	fourniseurRepository.deleteAll();
+    }
+
+    @Override
+    public void assignFournisseurToProduit(Long fournisseurId, Long produitId) {
+        Fournisseur four=fourniseurRepository.findById(fournisseurId).get();
+        Set<Fournisseur> f=new HashSet<>();
+        f.add(four);
+        Produit p=produitRepository.findById(produitId).get();
+        p.setFournisseurProduit(f);
+
+        produitRepository.save(p);
     }
 
 

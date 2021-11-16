@@ -11,5 +11,7 @@ public interface FactureService {
     void supprimerFacture(long id);
     void supprimerToutLesFactures();
     List<Facture> chercherFacture();
+    List<Facture> getFacturesByClient(Long idClient);
+    Facture addFacture(Facture f, Long idClient);
 
 }

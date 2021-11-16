@@ -1,5 +1,6 @@
 package tn.esprit.Controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.Repositories.FourniseurRepository;
@@ -12,6 +13,8 @@ import java.util.Set;
 
 
 @RestController
+@RequestMapping("/api/produit")
+@Api(tags = "Produit Manager")
 public class ProduitController {
 @Autowired
 ProduitServiceImpl ProduitController;

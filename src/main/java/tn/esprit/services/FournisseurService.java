@@ -11,4 +11,5 @@ public interface FournisseurService {
     public void DeleteFournisseur(long id);
     public void updateFournisseur(Fournisseur fournisseur, long id);
     public void DeleteAllFournisseur();
+    public void assignFournisseurToProduit(Long fournisseurId, Long produitId) ;
 }

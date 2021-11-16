@@ -1,6 +1,7 @@
 package tn.esprit.Controller;
 
 
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.model.Stock;
@@ -8,9 +9,10 @@ import tn.esprit.services.StockServiceImpl;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @RestController
 @RequestMapping("/api/stock")
+@Api(tags = "Stock Manager")
 public class StockController {
     @Autowired
     private StockServiceImpl stockService;
